@@ -29,7 +29,8 @@ form.addEventListener('submit', async (e) => {
       baseUrl: result.baseUrl,
       database: result.database,
       sessionId: result.sessionId,
-      userName
+      userName,
+      credentials: result.credentials   // <— keep the server’s exact object
     }));
     msg.textContent = 'Success! Redirecting…';
     msg.className = 'msg ok';
