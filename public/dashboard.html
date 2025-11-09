@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Geotab Reports</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="page">
+  <header class="topbar">
+    <div class="brand">Geotab Reports</div>
+    <div class="spacer"></div>
+    <button id="logoutBtn" class="ghost">Log out</button>
+  </header>
+
+  <div class="card">
+    <h2>Run a graph</h2>
+    <div class="grid">
+      <label>Report
+        <select id="reportSelect">
+          <option value="speeding">1) Speeding (# per vehicle)</option>
+          <option value="seatbelt">2) Seatbelt (# per vehicle)</option>
+          <option value="harsh_braking">3) Harsh Braking (# per vehicle)</option>
+          <option value="harsh_cornering">4) Harsh Cornering (# per vehicle)</option>
+          <option value="harsh_acceleration">5) Harsh Acceleration (# per vehicle)</option>
+          <option value="general_events">6) General Events (total per vehicle)</option>
+          <option value="events_by_type">7) Events by Type</option>
+          <option value="safety_scorecard">8) Safety Scorecard</option>
+          <option value="distance">9) Distance (per vehicle)</option>
+          <option value="idle">10) Idle / Drive / Distance</option>
+          <option value="utilization">11) Utilization (days driven)</option>
+        </select>
+      </label>
+      <label>From
+        <input type="date" id="fromDate" />
+      </label>
+      <label>To
+        <input type="date" id="toDate" />
+      </label>
+      <button id="runBtn">Run</button>
+    </div>
+    <div id="status" class="msg"></div>
+  </div>
+
+  <div class="card">
+    <h3 id="chartTitle">Chart</h3>
+    <canvas id="reportChart" height="120"></canvas>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <h3 class="grow">Data table</h3>
+      <button id="copyBtn" class="ghost">Copy to clipboard</button>
+    </div>
+    <div class="table-wrap">
+      <table id="dataTable">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script type="module" src="/js/ui.js"></script>
+  <script type="module" src="/js/geotab-client.js"></script>
+  <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>

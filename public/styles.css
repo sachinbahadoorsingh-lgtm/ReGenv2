@@ -1,0 +1,70 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171923;
+  --muted: #8b8fa3;
+  --text: #e7e9f3;
+  --accent: #5b8cff;
+  --accent-2: #7bdaff;
+  --border: #2a2f3d;
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body.page {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 800px at 20% -10%, #162037, transparent) no-repeat,
+              linear-gradient(180deg, #0c0f16, #0e111a);
+  color: var(--text);
+}
+.card {
+  max-width: 1000px;
+  margin: 24px auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+h1, h2, h3 { margin: 0 0 12px; }
+.muted { color: var(--muted); }
+label { display: block; margin: 10px 0; color: var(--muted); }
+input, select, button {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #121522;
+  color: var(--text);
+  outline: none;
+}
+button {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #0b0c12;
+  font-weight: 700;
+  letter-spacing: .2px;
+  cursor: pointer;
+  border: 0;
+}
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+button:disabled { opacity: .6; cursor: not-allowed; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(140px, 1fr)); gap: 12px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+.msg { margin-top: 10px; color: var(--muted); min-height: 20px; }
+.msg.ok { color: #2ecc71; }
+.msg.err { color: #e74c3c; }
+.topbar { max-width: 1000px; margin: 24px auto 0; display: flex; align-items: center; gap: 12px; }
+.brand { font-weight: 800; letter-spacing: .3px; }
+.spacer { flex: 1; }
+.row { display: flex; align-items: center; gap: 12px; }
+.grow { flex: 1; }
+.table-wrap { overflow: auto; border: 1px solid var(--border); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; min-width: 600px; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+thead th { position: sticky; top: 0; background: #111523; }
+tbody tr:hover { background: rgba(255,255,255,0.03); }

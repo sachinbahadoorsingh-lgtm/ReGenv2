@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Geotab Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="page">
+  <div class="card">
+    <h1>Sign in to Geotab</h1>
+    <p class="muted">Enter your MyGeotab credentials and database.</p>
+    <form id="loginForm">
+      <label>Username (email)
+        <input type="email" id="username" required placeholder="you@company.com" />
+      </label>
+      <label>Password
+        <input type="password" id="password" required />
+      </label>
+      <label>Database
+        <input type="text" id="database" required placeholder="mydatabase" />
+      </label>
+      <button id="loginBtn" type="submit">Sign in</button>
+      <div id="loginMsg" class="msg"></div>
+    </form>
+  </div>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
